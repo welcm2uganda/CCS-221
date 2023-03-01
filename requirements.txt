@@ -1,5 +1,1 @@
 streamlit
-figma
-opencv-python-headless
-matplotlib
-tensorflow
