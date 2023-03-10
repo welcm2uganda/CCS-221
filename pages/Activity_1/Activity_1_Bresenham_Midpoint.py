@@ -39,6 +39,9 @@ def BresenhamLine(x1, y1, x2, y2, color):
         x = x + 1 if x < x2 else x - 1
 
         print('x = %s, y = %s' % (x, y))
+        
+        if y2 > x2:
+            x3, y3 = y3, x3
         xcoordinates.append(x)
         ycoordinates.append(y)            
     plt.plot(xcoordinates, ycoordinates)
