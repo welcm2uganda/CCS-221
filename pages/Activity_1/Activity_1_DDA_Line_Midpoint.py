@@ -52,7 +52,7 @@ def main():
         0, 100)
     st.write('y2: ', y2)
     color = "g." 
-    DDALine(x, y, xEnd, yEnd, color)
+    DDALine(x, y, x2, y2, color)
 
 if __name__ == '__main__':
     main()
