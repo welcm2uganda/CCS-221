@@ -1,157 +1,79 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-import altair as alt
 
+st.title("Activity\t1\nGroup\t8\tBYTE\nBresenham\tMidpoint")
 
-
-def DDALine(x1, y1, x2, y2, color):
-    dx = y2 - x1
-    dy = y2 - y1
-    mpx = (x1 + x2) / 2         #midpoint
-    mpy = (y1 + y2) / 2         #midpoint
-
-    steps = abs(dx) if abs(dx) > abs(dy) else abs(dy)
-
-    Xinc = float(dx/steps)
-    Yinc = float(dy/steps)
-
-    fig = plt.figure()
-    for i in range(0, int(steps +1)):
-            plt.plot(int(x1), int(y1), color)
-            x1 += Xinc
-            y1 += Yinc
-            
-
-    st.write('[DDA Line] Midpoint of the line is (x,y): ', mpx, mpy)
-
-    plt.show() 
-    st.pyplot(fig)
-
-        
-
-
-
-
-def bresenham(x1, y1, x2, y2, color): 
-   
- 
-    dx = abs(x2 - x1) #change in x / delta x
-    dy = abs(y2 - y1) #change in y / delta y
-    mpx = (x1 + x2) / 2 #x midpoint
-    mpy = (y1 + y2) / 2 #y midpoint
-
-    slope = dy/float(dx) #slope
+def BresenhamLine(x1, y1, x2, y2, color):
     
-    if slope > 1:
-        dx, dy = dy, dx
-        x1, y1 = y1, x1
-        x2 ,y2 = y2, x2
-
-    pk = 2 * dy - dx #decision parameter
-    
-    xcoords = [x1] #x-coordinates
-    ycoords =[y1] #y-coordinates
-   
-    fig2=plt.figure()
-    for x in range(2,dx):
-        
-        if pk > 0: #case 2 [decision parameter satisfied] 
-            y1 = y1 + 1 if y1 < y2 else y1 - 1
-            pk = pk + 2 * (dy - dx)
-            
-        else : #otherwise
-            pk = pk + 2 * dy
-        
-        
-        x1 = x1 + 1 if x1 < x2 else x1 - 1
-        
-        
-        xcoords.append(x1)
-        ycoords.append(y1)
-
-    st.write('[Bresenhams Line] Midpoint of the Line is (x,y): ', mpx, mpy)
-
-
-    plt.plot(xcoords,ycoords)
-    plt.show() 
-    st.pyplot(fig2)
-    
-    
-    
-    
-    
-    
-def midpoint(x1, y1, x2, y2, color): 
-   
     x, y = x1, y1
     dx = abs(x2 - x1)
     dy = abs(y2 - y1)
-    x3 = (x1 + x2) / 2
-    y3 = (y1 + y2) / 2
+    gradient = dy/float(dx)
+    x3 = (x2 + x1) / 2
+    y3 = (y2 + y1) / 2
+   
 
-    slope = dy/float(dx)
-    
-    if slope > 1:
+    if gradient > 1:
         dx, dy = dy, dx
         x, y = y, x
         x1, y1 = y1, x1
-        x2 ,y2 = y2, x2
+        x2, y2 = y2, x2
 
     p = 2 * dy - dx
+    xcoordinates = [x]
+    ycoordinates = [y]
+
     
-    xcords = [x]
-    ycords =[y]
-   
-    fig3=plt.figure()
-    for k in range(2,dx):
+    steps = abs(dx) if abs(dx) > abs(dy) else abs(dy)
+
+    fig = plt.figure()
+    for i in range(0, int(steps + 1)):
+        
         if p > 0:
             y = y + 1 if y < y2 else y - 1
             p = p + 2 * (dy - dx)
-        else :
-            p = p + 2 * dy
-        
+        else:
+            p = p + 2  * dy
+
         x = x + 1 if x < x2 else x - 1
-        
-        xcords.append(x)
-        ycords.append(y)
 
-    st.write('Midpoint of the line is:', x3)
-    plt.plot(xcords,ycords,x3,y3,marker="o",markersize=5,markerfacecolor="red")
+        print('x = %s, y = %s' % (x, y))
+        xcoordinates.append(x)
+        ycoordinates.append(y)            
+    plt.plot(xcoordinates, ycoordinates)
+    plt.plot(x3, y3, marker = "o", markersize = 5, markerfacecolor = "red")
     plt.show()
-    st.pyplot(fig3)
-    
-    
-    
+    st.pyplot(fig)
+    st.write("Midpoint: ", int(x3), ", ", int(y3), ".")
 
-def main(): 
-    st.title("This is Activity 1")
+def main():
+    st.title("Bresenham Line")
+    x1 = 10
+    x2 = 10
 
     x = st.slider(
         'X1',
-        0, 1000)
-    st.write('Value of X1: ', x)
+        0, 100)
+    st.write('x1: ', x)
 
     y = st.slider(
         'Y1',
-        0, 1000)
-    st.write('Value of Y1: ', y)
+        0, 100)
+    st.write('y1: ', y)
 
-    xEnd = st.slider(
+    x2 = st.slider(
         'X2',
-        0, 1000)
-    st.write('Value of X2: ', xEnd)
+        0, 100)
+    st.write('x2: ', x2)
 
-    yEnd = st.slider(
+    y2 = st.slider(
         'Y2',
-        0, 1000)
-    st.write('Value of Y2: ', yEnd)
-    color = "b." 
-
-    DDALine(x, y, xEnd, yEnd, color)
-    bresenham(x,y,xEnd, yEnd, color) # call for Bresenham's Line function
-    midpoint(x,y,xEnd, yEnd, color)
+        0, 100)
+    st.write('y2: ', y2)
+    color = "g." 
+    BresenhamLine(x, y, x2, y2, color)
 
 
 if __name__ == '__main__':
-    main()    
+    main()
