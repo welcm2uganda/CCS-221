@@ -46,7 +46,7 @@ def BresenhamLine(x1, y1, x2, y2, color):
     st.pyplot(fig)
     st.write("Midpoint: ", int(x3), ", ", int(y3), ".")
     
-def midpoint(x1, y1, x2, y2, color):
+def Midpoint(x1, y1, x2, y2, color):
     fig = plt.figure()
 
     dx = x2 - x1
@@ -103,6 +103,7 @@ def main():
     st.write('y2: ', y2)
     color = "g." 
     BresenhamLine(x, y, x2, y2, color)
+    Midpoint(x, y, x_end, y_end, color)
 
 
 if __name__ == '__main__':
