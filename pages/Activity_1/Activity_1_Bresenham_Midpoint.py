@@ -42,7 +42,7 @@ def BresenhamLine(x1, y1, x2, y2, color):
         xcoordinates.append(x)
         ycoordinates.append(y)            
     plt.plot(xcoordinates, ycoordinates)
-    plt.plot(x3, y3, x3, y3 marker = "o", markersize = 5, markerfacecolor = "red")
+    plt.plot(x3 y3, marker = "o", markersize = 5, markerfacecolor = "red")
     plt.show()
     st.pyplot(fig)
     st.write("Midpoint: ", int(x3), ", ", int(y3), ".")
