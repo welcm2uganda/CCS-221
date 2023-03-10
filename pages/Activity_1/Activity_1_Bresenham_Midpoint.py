@@ -103,7 +103,7 @@ def main():
     st.write('y2: ', y2)
     color = "g." 
     BresenhamLine(x, y, x2, y2, color)
-    Midpoint(x, y, x_end, y_end, color)
+    Midpoint(x, y, x2, y2, color)
 
 
 if __name__ == '__main__':
