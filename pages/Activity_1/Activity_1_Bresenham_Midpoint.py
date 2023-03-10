@@ -40,11 +40,7 @@ def BresenhamLine(x1, y1, x2, y2, color):
 
         print('x = %s, y = %s' % (x, y))
         xcoordinates.append(x)
-        ycoordinates.append(y)
-        
-        if x2 > y2 or y1 > x1:
-            x3, y3 = y3, x3
-            
+        ycoordinates.append(y)            
     plt.plot(xcoordinates, ycoordinates)
     plt.plot(y3, x3, marker = "o", markersize = 5, markerfacecolor = "red")
     plt.show()
