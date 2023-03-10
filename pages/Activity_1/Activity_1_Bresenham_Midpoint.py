@@ -24,6 +24,8 @@ def BresenhamLine(x1, y1, x2, y2, color):
     xcoordinates = [x]
     ycoordinates = [y]
 
+    
+    steps = abs(dx) if abs(dx) > abs(dy) else abs(dy)
 
     fig = plt.figure()
     for i in range(0, int(steps + 1)):
@@ -40,7 +42,7 @@ def BresenhamLine(x1, y1, x2, y2, color):
         xcoordinates.append(x)
         ycoordinates.append(y)            
     plt.plot(xcoordinates, ycoordinates)
-    plt.plot(y3, x3, marker = "o", markersize = 5, markerfacecolor = "red")
+    plt.plot(y3, y3, marker = "o", markersize = 5, markerfacecolor = "red")
     plt.show()
     st.pyplot(fig)
     st.write("Midpoint: ", int(x3), ", ", int(y3), ".")
