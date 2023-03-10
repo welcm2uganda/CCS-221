@@ -1,12 +1,18 @@
+import streamlit as st
 import matplotlib.pyplot as plt
 
+st.title("Activity_1\nGroup_8_BYTE\nBresenham_Midpoint")
+
 def BresenhamLine(x1, y1, x2, y2, color):
+    fig = plt.figure()
+    
     x, y = x1, y1
     dx = abs(x2 - x1)
     dy = abs(y2 - y1)
     gradient = dy/(dx)
     x3 = (x2 + x1) / 2
     y3 = (y2 + y1) / 2
+   
 
     if gradient > 1:
         dx, dy = dy, dx
@@ -36,7 +42,8 @@ def BresenhamLine(x1, y1, x2, y2, color):
     plt.plot(xcoordinates, ycoordinates)
     plt.plot(x3, y3, marker = "o", markersize = 5, markerfacecolor = "red")     
     plt.show()
-    print("Midpoint is at", int(x3), ", ", int(y3), ".")
+    st.pyplot(fig)
+    st.write("Midpoint is at", int(x3), ", ", int(y3), ".")
 
 def main():
     x = int(input("Enter X1: "))
