@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 
-st.title("Activity_1\nGroup_8_BYTE\nBresenham_Midpoint")
+st.title("Activity\n1\nGroup\n8\nBYTE\nBresenham\nMidpoint")
 
 def BresenhamLine(x1, y1, x2, y2, color):
     
