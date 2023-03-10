@@ -48,6 +48,8 @@ def BresenhamLine(x1, y1, x2, y2, color):
 
 def main():
     st.title("This is Activity 1")
+    x1 = 10
+    x2 = 10
 
     x = st.slider(
         'X1',
