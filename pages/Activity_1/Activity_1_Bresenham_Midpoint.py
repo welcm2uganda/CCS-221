@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 st.title("Activity_1\nGroup_8_BYTE\nBresenham_Midpoint")
 
 def BresenhamLine(x1, y1, x2, y2, color):
-    fig = plt.figure()
     
     x, y = x1, y1
     dx = abs(x2 - x1)
@@ -26,6 +25,7 @@ def BresenhamLine(x1, y1, x2, y2, color):
 
     steps = abs(dx) if abs(dx) > abs(dy) else abs(dy)
 
+    fig = plt.figure()
     for i in range(0, int(steps + 1)):
         
         if p > 0:
@@ -40,17 +40,34 @@ def BresenhamLine(x1, y1, x2, y2, color):
         xcoordinates.append(x)
         ycoordinates.append(y)
     plt.plot(xcoordinates, ycoordinates)
-    plt.plot(x3, y3, marker = "o", markersize = 5, markerfacecolor = "red")     
+    plt.plot(x3, y3, marker = "o", markersize = 5, markerfacecolor = "red")
     plt.show()
     st.pyplot(fig)
     st.write("Midpoint is at", int(x3), ", ", int(y3), ".")
 
 def main():
-    x = int(input("Enter X1: "))
-    y = int(input("Enter Y1: "))
-    x2 = int(input("Enter X2: "))
-    y2 = int(input("Enter Y2: "))
-    color = "g."
+    st.title("This is Activity 1")
+
+    x = st.slider(
+        'X1',
+        0, 1000)
+    st.write('Value of X1: ', x)
+
+    y = st.slider(
+        'Y1',
+        0, 1000)
+    st.write('Value of Y1: ', y)
+
+    xEnd = st.slider(
+        'X2',
+        0, 1000)
+    st.write('Value of X2: ', xEnd)
+
+    yEnd = st.slider(
+        'Y2',
+        0, 1000)
+    st.write('Value of Y2: ', yEnd)
+    color = "g." 
     BresenhamLine(x, y, x2, y2, color)
 
 
