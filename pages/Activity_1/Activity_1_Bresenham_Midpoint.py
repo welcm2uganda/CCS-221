@@ -42,40 +42,10 @@ def BresenhamLine(x1, y1, x2, y2, color):
         xcoordinates.append(x)
         ycoordinates.append(y)            
     plt.plot(xcoordinates, ycoordinates)
+    plt.plot(x3, y3, marker = "o", markersize = 5, markerfacecolor = "red")
     plt.show()
     st.pyplot(fig)
     st.write("Midpoint: ", int(x3), ", ", int(y3), ".")
-    
-def Midpoint(x1, y1, x2, y2, color):
-    fig = plt.figure()
-
-    dx = x2 - x1
-    dy = y2 - y1
-
-    d  = dy - (dx/2)
-    x = x1
-    y = y1
-
-    xcoordinates = [x]
-    ycoordinates = [y]
-
-    while (x<x2):
-        x = x + 1
-        # East is Chosen
-        if (d<0):
-            d = d + dy
-
-        # North East is Chosen
-        else:
-            d = d + (dy - dx)
-            y = y + 1
-
-        xcoordinates.append(x)
-        ycoordinates.append(y)
-        # print(f"x = {x}, y = {y}")
-    plt.plot(xcoordinates, ycoordinates, color, marker='s', markersize=5)
-
-    return fig
 
 def main():
     st.title("Bresenham Line")
@@ -103,7 +73,6 @@ def main():
     st.write('y2: ', y2)
     color = "g." 
     BresenhamLine(x, y, x2, y2, color)
-    Midpoint(x, y, x2, y2, color)
 
 
 if __name__ == '__main__':
