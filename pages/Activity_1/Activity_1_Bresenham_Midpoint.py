@@ -19,6 +19,7 @@ def BresenhamLine(x1, y1, x2, y2, color):
         x, y = y, x
         x1, y1 = y1, x1
         x2, y2 = y2, x2
+        x3, y3 = y3, x3
 
     p = 2 * dy - dx
     xcoordinates = [x]
