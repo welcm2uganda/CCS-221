@@ -44,10 +44,10 @@ def BresenhamLine(x1, y1, x2, y2, color):
     plt.plot(x3, y3, marker = "o", markersize = 5, markerfacecolor = "red")
     plt.show()
     st.pyplot(fig)
-    st.write("Midpoint is at", int(x3), ", ", int(y3), ".")
+    st.write("Midpoint: ", int(x3), ", ", int(y3), ".")
 
 def main():
-    st.title("This is Activity 1")
+    st.title("Bresenham Line")
     x1 = 10
     x2 = 10
 
