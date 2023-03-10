@@ -29,7 +29,7 @@ def DDALine(x1, y1, x2, y2, color):
     st.write("Midpoint: ", int(x3), ", ", int(y3), ".")
 
 def main():
-    st.title("Bresenham Line")
+    st.title("DDA Line")
     x1 = 10
     x2 = 10
 
