@@ -59,12 +59,12 @@ def main():
         0, 100)
     st.write('y1: ', y)
 
-    xEnd = st.slider(
+    x2 = st.slider(
         'X2',
         0, 100)
     st.write('x2: ', x2)
 
-    yEnd = st.slider(
+    y2 = st.slider(
         'Y2',
         0, 100)
     st.write('y2: ', y2)
