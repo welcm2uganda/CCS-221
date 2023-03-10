@@ -24,7 +24,6 @@ def BresenhamLine(x1, y1, x2, y2, color):
     xcoordinates = [x]
     ycoordinates = [y]
 
-    steps = abs(dx) if abs(dx) > abs(dy) else abs(dy)
 
     fig = plt.figure()
     for i in range(0, int(steps + 1)):
