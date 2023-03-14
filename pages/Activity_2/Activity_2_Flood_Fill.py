@@ -81,7 +81,7 @@ m = len(screen)
 
 n = len(screen[0])
     
-    
+prevC = screen[x][y]
 st.title("Floodfill")
 
 x = st.slider(
@@ -98,9 +98,6 @@ newC = st.slider(
         'Color',
         0, 3)
 st.write('color: ', newC
-         
-         
-prevC = screen[x][y]
  
 floodFill(screen, m, n, x, y, prevC, newC)
  
