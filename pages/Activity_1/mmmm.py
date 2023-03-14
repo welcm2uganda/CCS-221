@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import streamlit as st
 def DDALine(x1, y1, x2, y2, color):
     dx = x2 - x1
     dy = y2 - y1
@@ -87,34 +86,14 @@ def midpoint(x1, y1, x2, y2, color):
     plt.plot(xcoordinates, ycoordinates, color, marker='s', markersize=5)
     plt.show()
 def main():
-    st.title("MMMMMM Line")
-    x1 = 10
-    x2 = 10
-
-    x = st.slider(
-        'X1',
-        0, 100)
-    st.write('x1: ', x)
-
-    y = st.slider(
-        'Y1',
-        0, 100)
-    st.write('y1: ', y)
-
-    x2 = st.slider(
-        'X2',
-        0, 100)
-    st.write('x2: ', x2)
-
-    y2 = st.slider(
-        'Y2',
-        0, 100)
-    st.write('y2: ', y2)
-    color = "g." 
+    x = int(input("Enter x1: "))
+    y = int(input("Enter y1: "))
+    x_end = int(input("Enter x2: "))
+    y_end = int(input("Enter y2: "))
     color = "#aa2533"
-    DDALine(x, y, x2, y2, color)
-    Bres(x, y, x2, y2, color)
-    midpoint(x, y, x2, y2, color)
+    DDALine(x, y, x_end, y_end, color)
+    Bres(x, y, x_end, y_end, color)
+    midpoint(x, y, x_end, y_end, color)
 
 if __name__ == "__main__":
     main()
