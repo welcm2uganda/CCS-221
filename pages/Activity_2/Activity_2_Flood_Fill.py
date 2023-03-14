@@ -80,8 +80,7 @@ plt.show()
 m = len(screen)
 
 n = len(screen[0])
-    
-prevC = screen[x][y]
+
 st.title("Floodfill")
 
 x = st.slider(
@@ -97,8 +96,9 @@ st.write('y1: ', y)
 newC = st.slider(
         'Color',
         0, 3)
-st.write('color: ', newC
+st.write('color: ', newC)
  
+prevC = screen[x][y]
 floodFill(screen, m, n, x, y, prevC, newC)
  
 plt.rcParams["figure.figsize"] = [8, 7]
