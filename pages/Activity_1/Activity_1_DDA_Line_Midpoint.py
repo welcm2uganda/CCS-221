@@ -19,7 +19,7 @@ def DDALine(x1, y1, x2, y2, color):
     fig = plt.figure()
     for i in range(0, int(steps + 1)):
 
-        print('x = %s, y = %s' % (x, y))
+        print('x = %s, y = %s' % (x1, y1))
         plt.plot(int(x1), int (y1), color)
         x1 += Xcoordinate
         y1 += Ycoordinate
