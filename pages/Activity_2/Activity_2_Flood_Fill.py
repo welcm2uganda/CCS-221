@@ -65,14 +65,13 @@ screen =[
 [1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1],
 [1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1],
 [1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1]]
-
+rndm.shuffle(screen)
 fig = plt.figure()
 plt.rcParams["figure.figsize"] = [8, 7]
 plt.rcParams["figure.autolayout"] = False
 
 plt.axis([-0.5, 10.5, -0.5, 10.5])
 
-rndm.shuffle(screen)
 print("Before floodfill: ")
 plt.imshow(screen, interpolation = 'none', cmap = 'inferno')
 plt.colorbar()
