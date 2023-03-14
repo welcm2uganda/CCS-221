@@ -74,6 +74,5 @@ def main():
     color = "g." 
     BresenhamLine(x, y, x2, y2, color)
 
-
 if __name__ == '__main__':
     main()
