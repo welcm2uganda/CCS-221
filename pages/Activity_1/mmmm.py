@@ -86,7 +86,7 @@ def midpoint(x1, y1, x2, y2, color):
     plt.plot(xcoordinates, ycoordinates, color, marker='s', markersize=5)
     plt.show()
 def main():
-st.title("Bresenham Line")
+    st.title("Bresenham Line")
     x1 = 10
     x2 = 10
 
