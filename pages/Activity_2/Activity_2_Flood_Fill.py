@@ -1,6 +1,7 @@
 import numpy as py
 import matplotlib.pyplot as plt
 import random as rndm
+import streamlit as st
 
 
 def isValid(screen, m, n, x, y, prevC, newC):
