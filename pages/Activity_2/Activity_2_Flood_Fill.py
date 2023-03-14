@@ -2,6 +2,7 @@ import numpy as py
 import matplotlib.pyplot as plt
 import random as rndm
 
+
 def isValid(screen, m, n, x, y, prevC, newC):
     if x<0 or x>= m\
        or y<0 or y>= n or\
@@ -79,14 +80,24 @@ plt.show()
 m = len(screen)
 
 n = len(screen[0])
+    st.title("Floodfill")
 
-print("Coordinate values of pixel you want to change:")
-x = int(input("Input value of x: "))
-y = int(input("Input value of y: "))
+    x = st.slider(
+        'X1',
+        0, 10)
+    st.write('x1: ', x)
 
+    y = st.slider(
+        'Y1',
+        0, 10)
+    st.write('y1: ', y)
+
+ newC = st.slider(
+        'Color',
+        0, 3)
+    st.write('color: ', newC
+    color = "g." 
 prevC = screen[x][y]
-
-newC = float(input("Input value from 1 through 3 to change selected pixels' colors: "))
  
 floodFill(screen, m, n, x, y, prevC, newC)
  
