@@ -30,14 +30,12 @@ def DDALine(x1, y1, x2, y2, color):
 
 def main():
     st.title("DDA Line")
-    x1 = 10
-    x2 = 10
 
-    x = st.slider(
+    x1 = st.slider(
         'x1',
         0, 100)
 
-    y = st.slider(
+    y1 = st.slider(
         'y1',
         0, 100)
 
@@ -49,7 +47,7 @@ def main():
         'y2',
         0, 100)
     color = "g." 
-    DDALine(x, y, xEnd, yEnd, color)
+    DDALine(x1, y1, x2, y2, color)
 
 if __name__ == '__main__':
     main()
