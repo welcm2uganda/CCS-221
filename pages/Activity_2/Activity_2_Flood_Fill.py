@@ -66,7 +66,7 @@ screen =[
 [1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1],
 [1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1]]
 
-
+fig = plt.figure()
 plt.rcParams["figure.figsize"] = [8, 7]
 plt.rcParams["figure.autolayout"] = False
 
@@ -115,4 +115,6 @@ for i in range(m):
 print("After floodfill: ")
 plt.imshow(screen, interpolation = 'none', cmap = 'inferno')
 plt.colorbar()
+plt.show()
+st.pyplot(fig)
 plt.show()
