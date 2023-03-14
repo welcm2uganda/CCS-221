@@ -8,8 +8,8 @@ st.title("Activity\t1\nGroup\t8\tBYTE\nDDA\tMidpoint")
 def DDALine(x1, y1, x2, y2, color):
     dx = x2 - x1
     dy = y2 - y1
-    x3 = (x1 + x2) / 2
-    y3 = (y1 + y2) / 2
+    x3 = ((x1 + x2) / 2)
+    y3 = ((y1 + y2) / 2)
 
     steps = abs(dx) if abs(dx) > abs(dy) else abs(dy)
 
@@ -49,7 +49,7 @@ def main():
         'y2',
         0, 100)
     color = "g." 
-    DDALine(x, y, x2, y2, color)
+    DDALine(x1, y1, x2, y2, color)
 
 if __name__ == '__main__':
     main()
