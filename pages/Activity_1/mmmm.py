@@ -87,7 +87,7 @@ def midpoint(x1, y1, x2, y2, color):
     plt.plot(xcoordinates, ycoordinates, color, marker='s', markersize=5)
     plt.show()
 def main():
-    st.title("Bresenham Line")
+    st.title("MMMMMM Line")
     x1 = 10
     x2 = 10
 
@@ -101,20 +101,20 @@ def main():
         0, 100)
     st.write('y1: ', y)
 
-    x_end = st.slider(
+    x2 = st.slider(
         'X2',
         0, 100)
     st.write('x2: ', x2)
 
-    y_end = st.slider(
+    y2 = st.slider(
         'Y2',
         0, 100)
     st.write('y2: ', y2)
     color = "g." 
     color = "#aa2533"
-    DDALine(x, y, x_end, y_end, color)
-    Bres(x, y, x_end, y_end, color)
-    midpoint(x, y, x_end, y_end, color)
+    DDALine(x, y, x2, y2, color)
+    Bres(x, y, x2, y2, color)
+    midpoint(x, y, x2, y2, color)
 
 if __name__ == "__main__":
     main()
