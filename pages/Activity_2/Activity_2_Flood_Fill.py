@@ -98,7 +98,6 @@ newC = st.slider(
         'Color',
         0, 3)
 st.write('color: ', newC
-color = ("g.")
          
          
 prevC = screen[x][y]
