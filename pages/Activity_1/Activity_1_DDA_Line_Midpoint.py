@@ -49,7 +49,7 @@ def main():
         'y2',
         0, 100)
     color = "g." 
-    DDALine(x1, y1, x2, y2, color)
+    DDALine(x, y, xEnd, yEnd, color)
 
 if __name__ == '__main__':
     main()
