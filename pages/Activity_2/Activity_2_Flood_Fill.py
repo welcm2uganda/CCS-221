@@ -80,23 +80,27 @@ plt.show()
 m = len(screen)
 
 n = len(screen[0])
-    st.title("Floodfill")
+    
+    
+st.title("Floodfill")
 
-    x = st.slider(
-        'X1',
-        0, 10)
-    st.write('x1: ', x)
+x = st.slider(
+    'X1',
+    0, 10)
+st.write('x1: ', x)
 
-    y = st.slider(
-        'Y1',
-        0, 10)
-    st.write('y1: ', y)
+y = st.slider(
+    'Y1',
+    0, 10)
+st.write('y1: ', y)
 
- newC = st.slider(
+newC = st.slider(
         'Color',
         0, 3)
-    st.write('color: ', newC
-    color = "g." 
+st.write('color: ', newC
+color = "g." 
+         
+         
 prevC = screen[x][y]
  
 floodFill(screen, m, n, x, y, prevC, newC)
