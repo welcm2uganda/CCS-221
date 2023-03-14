@@ -65,7 +65,6 @@ screen =[
 [1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1],
 [1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1],
 [1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1]]
-rndm.shuffle(screen)
 fig = plt.figure()
 plt.rcParams["figure.figsize"] = [8, 7]
 plt.rcParams["figure.autolayout"] = False
